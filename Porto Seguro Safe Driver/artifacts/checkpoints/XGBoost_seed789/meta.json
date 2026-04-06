@@ -1,0 +1,36 @@
+{
+  "model_name": "XGBoost",
+  "seed": 789,
+  "format": "joblib",
+  "metrics": {
+    "accuracy": 0.9635509857782482,
+    "auc_roc": 0.6347828522854106,
+    "f1": 0.0,
+    "seed": 789,
+    "train_seconds": 6.834760827998252,
+    "infer_ms_per_sample": 0.007440676563926702,
+    "infer_ms_per_sample_std": 0.0002776221244054606,
+    "model_size_mb": 0.6773195266723633,
+    "best_valid_auc": 0.6348707494972641,
+    "best_params": {
+      "learning_rate": 0.022127403832621583,
+      "max_depth": 3,
+      "min_child_weight": 1.7790267814124234,
+      "subsample": 0.7945567382721752,
+      "colsample_bytree": 0.8696824869009516,
+      "reg_alpha": 0.0014139104597015485,
+      "reg_lambda": 7.028978444644654e-05,
+      "n_estimators": 600
+    }
+  },
+  "best_params": {
+    "learning_rate": 0.022127403832621583,
+    "max_depth": 3,
+    "min_child_weight": 1.7790267814124234,
+    "subsample": 0.7945567382721752,
+    "colsample_bytree": 0.8696824869009516,
+    "reg_alpha": 0.0014139104597015485,
+    "reg_lambda": 7.028978444644654e-05,
+    "n_estimators": 600
+  }
+}
