@@ -1,0 +1,24 @@
+{
+  "model_name": "LogisticRegression",
+  "seed": 456,
+  "format": "joblib",
+  "metrics": {
+    "accuracy": 0.6204396730593147,
+    "auc_roc": 0.6269957377753588,
+    "f1": 0.09642842858856937,
+    "seed": 456,
+    "train_seconds": 2021.8369871209998,
+    "infer_ms_per_sample": 0.006593905072955282,
+    "infer_ms_per_sample_std": 0.00018428023609940827,
+    "model_size_mb": 0.011026382446289062,
+    "best_valid_auc": 0.6237026840487025,
+    "best_params": {
+      "C": 0.04531995730789292,
+      "penalty": "l1"
+    }
+  },
+  "best_params": {
+    "C": 0.04531995730789292,
+    "penalty": "l1"
+  }
+}
