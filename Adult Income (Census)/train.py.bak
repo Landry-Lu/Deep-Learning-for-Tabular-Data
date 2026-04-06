@@ -1,0 +1,166 @@
+import time
+import numpy as np
+import torch
+import torch.nn as nn
+import torch.optim as optim
+from torch.utils.data import DataLoader, TensorDataset
+from sklearn.metrics import roc_auc_score, accuracy_score, f1_score
+from xgboost import XGBClassifier
+from lightgbm import LGBMClassifier
+from sklearn.linear_model import LogisticRegression
+from pytorch_tabnet.tab_model import TabNetClassifier
+import os
+import joblib
+from src.models.ft_transformer import FTTransformer
+from src.utils import set_seed
+
+def train_xgboost(X_train, y_train, X_val, y_val, params, seed=42):
+    model = XGBClassifier(random_state=seed, eval_metric='logloss', **params)
+    model.fit(X_train, y_train, eval_set=[(X_val, y_val)], verbose=False)
+    return model
+
+def train_lightgbm(X_train, y_train, X_val, y_val, params, seed=42):
+    model = LGBMClassifier(random_state=seed, **params)
+    model.fit(X_train, y_train, eval_set=[(X_val, y_val)], callbacks=[], verbose=False)
+    return model
+
+def train_logistic(X_train, y_train, X_val, y_val, params, seed=42):
+    model = LogisticRegression(random_state=seed, max_iter=1000, **params)
+    model.fit(X_train, y_train)
+    return model
+
+def train_tabnet(X_train, y_train, X_val, y_val, params, seed=42):
+    model = TabNetClassifier(seed=seed, **params)
+    model.fit(
+        X_train, y_train,
+        eval_set=[(X_val, y_val)],
+        eval_metric=['auc'],
+        max_epochs=50,
+        patience=10,
+        batch_size=256,
+        virtual_batch_size=128,
+        verbose=0
+    )
+    return model
+
+def train_ft_transformer(X_num_train, X_cat_train, y_train,
+                         X_num_val, X_cat_val, y_val,
+                         cat_cardinalities, params, seed=42):
+    set_seed(seed)
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    model = FTTransformer(
+        n_num_features=X_num_train.shape[1],
+        cat_cardinalities=cat_cardinalities,
+        embedding_dim=params.get('embedding_dim', 64),
+        n_blocks=params.get('n_blocks', 3),
+        n_heads=params.get('n_heads', 8),
+        ff_dim=params.get('ff_dim', 128),
+        dropout=params.get('dropout', 0.1),
+        output_dim=1
+    ).to(device)
+    optimizer = optim.Adam(model.parameters(), lr=params.get('lr', 1e-3))
+    criterion = nn.BCEWithLogitsLoss()
+
+    train_dataset = TensorDataset(torch.FloatTensor(X_num_train), torch.LongTensor(X_cat_train), torch.FloatTensor(y_train))
+    val_dataset = TensorDataset(torch.FloatTensor(X_num_val), torch.LongTensor(X_cat_val), torch.FloatTensor(y_val))
+    train_loader = DataLoader(train_dataset, batch_size=params.get('batch_size', 256), shuffle=True)
+    val_loader = DataLoader(val_dataset, batch_size=256)
+
+    best_val_auc = 0
+    best_model_state = None
+    patience = 10
+    epochs_no_improve = 0
+    for epoch in range(params.get('epochs', 100)):
+        model.train()
+        for x_num, x_cat, y in train_loader:
+            x_num, x_cat, y = x_num.to(device), x_cat.to(device), y.to(device)
+            optimizer.zero_grad()
+            logits = model(x_num, x_cat)
+            loss = criterion(logits, y)
+            loss.backward()
+            optimizer.step()
+        model.eval()
+        y_pred_list = []
+        y_true_list = []
+        with torch.no_grad():
+            for x_num, x_cat, y in val_loader:
+                x_num, x_cat, y = x_num.to(device), x_cat.to(device), y.to(device)
+                logits = model(x_num, x_cat)
+                probs = torch.sigmoid(logits)
+                y_pred_list.append(probs.cpu().numpy())
+                y_true_list.append(y.cpu().numpy())
+        y_pred = np.concatenate(y_pred_list)
+        y_true = np.concatenate(y_true_list)
+        val_auc = roc_auc_score(y_true, y_pred)
+        if val_auc > best_val_auc:
+            best_val_auc = val_auc
+            best_model_state = {k: v.cpu() for k, v in model.state_dict().items()}
+            epochs_no_improve = 0
+        else:
+            epochs_no_improve += 1
+        if epochs_no_improve >= patience:
+            break
+    model.load_state_dict(best_model_state)
+    return model
+
+def evaluate_model(model, X_test, y_test, model_type, cat_cardinalities=None, X_cat_test=None):
+    # Inference latency and metrics
+    if model_type in ['xgboost', 'lightgbm', 'logistic']:
+        def predict_proba_batch(X):
+            if model_type == 'logistic':
+                return model.predict_proba(X)[:, 1]
+            else:
+                return model.predict_proba(X)[:, 1]
+        sample_X = X_test[:1000]
+        start = time.perf_counter()
+        for _ in range(10):
+            _ = predict_proba_batch(sample_X)
+        latency = (time.perf_counter() - start) / (10 * len(sample_X)) * 1000
+        y_pred_proba = predict_proba_batch(X_test)
+    elif model_type == 'tabnet':
+        start = time.perf_counter()
+        for _ in range(10):
+            _ = model.predict_proba(X_test[:1000])[:, 1]
+        latency = (time.perf_counter() - start) / (10 * 1000) * 1000
+        y_pred_proba = model.predict_proba(X_test)[:, 1]
+    elif model_type == 'ft_transformer':
+        device = next(model.parameters()).device
+        model.eval()
+        X_num_test, X_cat_test = X_test
+        test_dataset = TensorDataset(torch.FloatTensor(X_num_test), torch.LongTensor(X_cat_test))
+        test_loader = DataLoader(test_dataset, batch_size=256)
+        y_pred_proba_list = []
+        start = time.perf_counter()
+        with torch.no_grad():
+            for x_num, x_cat in test_loader:
+                x_num, x_cat = x_num.to(device), x_cat.to(device)
+                logits = model(x_num, x_cat)
+                probs = torch.sigmoid(logits)
+                y_pred_proba_list.append(probs.cpu().numpy())
+        latency = (time.perf_counter() - start) / len(X_num_test) * 1000
+        y_pred_proba = np.concatenate(y_pred_proba_list)
+
+    y_pred_binary = (y_pred_proba >= 0.5).astype(int)
+    auc = roc_auc_score(y_test, y_pred_proba)
+    acc = accuracy_score(y_test, y_pred_binary)
+    f1 = f1_score(y_test, y_pred_binary)
+
+    # Model size
+    import tempfile
+    if model_type in ['xgboost', 'lightgbm', 'logistic']:
+        with tempfile.NamedTemporaryFile(suffix='.pkl', delete=False) as f:
+            joblib.dump(model, f.name)
+            size_mb = os.path.getsize(f.name) / (1024 * 1024)
+            os.unlink(f.name)
+    elif model_type == 'tabnet':
+        with tempfile.NamedTemporaryFile(suffix='.zip', delete=False) as f:
+            model.save_model(f.name)
+            size_mb = os.path.getsize(f.name) / (1024 * 1024)
+            os.unlink(f.name)
+    else:
+        with tempfile.NamedTemporaryFile(suffix='.pt', delete=False) as f:
+            torch.save(model.state_dict(), f.name)
+            size_mb = os.path.getsize(f.name) / (1024 * 1024)
+            os.unlink(f.name)
+
+    return {'auc': auc, 'accuracy': acc, 'f1': f1, 'latency_ms_per_sample': latency, 'model_size_mb': size_mb}
