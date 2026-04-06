@@ -1,0 +1,29 @@
+PyTorch: 2.8.0+cu128, CUDA: True
+GPU: NVIDIA GeForce RTX 4090
+Device: cuda, CPU cores: 16
+
+Loading California Housing dataset...
+Shape: (20640, 8), Target: (20640,)
+Features: ['MedInc', 'HouseAge', 'AveRooms', 'AveBedrms', 'Population', 'AveOccup', 'Latitude', 'Longitude']
+[RESUME] Found checkpoint: 6 tasks done
+  - [42, 'Ridge']
+  - [42, 'RandomForest']
+  - [42, 'XGBoost']
+  - [42, 'LightGBM']
+  - [42, 'CatBoost']
+  - [42, 'TabNet']
+
+============================================================
+SEED 42
+============================================================
+  [Ridge] SKIPPED (already done)
+  [RandomForest] SKIPPED (already done)
+  [XGBoost] SKIPPED (already done)
+  [LightGBM] SKIPPED (already done)
+  [CatBoost] SKIPPED (already done)
+  [TabNet] SKIPPED (already done)
+  [FT-Transformer] training...W0404 07:39:34.617000 708279 site-packages/torch/_dynamo/convert_frame.py:1016] [0/8] torch._dynamo hit config.recompile_limit (8)
+W0404 07:39:34.617000 708279 site-packages/torch/_dynamo/convert_frame.py:1016] [0/8]    function: 'forward' (/root/miniconda3/lib/python3.12/site-packages/rtdl/modules.py:1499)
+W0404 07:39:34.617000 708279 site-packages/torch/_dynamo/convert_frame.py:1016] [0/8]    last reason: 0/7: GLOBAL_STATE changed: grad_mode 
+W0404 07:39:34.617000 708279 site-packages/torch/_dynamo/convert_frame.py:1016] [0/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+W0404 07:39:34.617000 708279 site-packages/torch/_dynamo/convert_frame.py:1016] [0/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.

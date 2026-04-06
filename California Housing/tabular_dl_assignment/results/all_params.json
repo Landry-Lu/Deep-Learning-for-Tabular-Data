@@ -1,0 +1,201 @@
+{
+  "Ridge": [
+    {
+      "alpha": 34.18150669288269
+    },
+    {
+      "alpha": 112.48261442301721
+    },
+    {
+      "alpha": 0.0001266367755089807
+    }
+  ],
+  "RandomForest": [
+    {
+      "n_estimators": 171,
+      "max_depth": 20,
+      "min_samples_split": 3,
+      "min_samples_leaf": 1,
+      "max_features": "log2"
+    },
+    {
+      "n_estimators": 212,
+      "max_depth": 20,
+      "min_samples_split": 2,
+      "min_samples_leaf": 1,
+      "max_features": "log2"
+    },
+    {
+      "n_estimators": 244,
+      "max_depth": 20,
+      "min_samples_split": 6,
+      "min_samples_leaf": 2,
+      "max_features": "log2"
+    }
+  ],
+  "XGBoost": [
+    {
+      "n_estimators": 667,
+      "max_depth": 7,
+      "learning_rate": 0.03459021447378048,
+      "subsample": 0.914298198774892,
+      "colsample_bytree": 0.8095839387020464,
+      "reg_alpha": 0.2933131257309854,
+      "reg_lambda": 1.6947151945563083e-06
+    },
+    {
+      "n_estimators": 636,
+      "max_depth": 9,
+      "learning_rate": 0.035613292732829024,
+      "subsample": 0.8174701829621965,
+      "colsample_bytree": 0.7605435357049892,
+      "reg_alpha": 1.025416694208555e-06,
+      "reg_lambda": 6.868231776455986e-07
+    },
+    {
+      "n_estimators": 497,
+      "max_depth": 6,
+      "learning_rate": 0.07016266899398041,
+      "subsample": 0.9045073243418859,
+      "colsample_bytree": 0.7236153842322073,
+      "reg_alpha": 1.3815646103739477e-05,
+      "reg_lambda": 0.001885987928957106
+    }
+  ],
+  "LightGBM": [
+    {
+      "n_estimators": 745,
+      "max_depth": 12,
+      "learning_rate": 0.02404577752262186,
+      "num_leaves": 127,
+      "subsample": 0.781554532964025,
+      "colsample_bytree": 0.5673815486062264,
+      "min_child_samples": 13
+    },
+    {
+      "n_estimators": 695,
+      "max_depth": 10,
+      "learning_rate": 0.03262716396282572,
+      "num_leaves": 150,
+      "subsample": 0.6614794569265892,
+      "colsample_bytree": 0.680894327811157,
+      "min_child_samples": 26
+    },
+    {
+      "n_estimators": 411,
+      "max_depth": 9,
+      "learning_rate": 0.11032388383977745,
+      "num_leaves": 196,
+      "subsample": 0.6840346762688702,
+      "colsample_bytree": 0.617548840605993,
+      "min_child_samples": 76
+    }
+  ],
+  "CatBoost": [
+    {
+      "iterations": 359,
+      "depth": 9,
+      "learning_rate": 0.1081345578158692,
+      "l2_leaf_reg": 1.4525304817109867e-07,
+      "bagging_temperature": 0.06973591627306627
+    },
+    {
+      "iterations": 389,
+      "depth": 9,
+      "learning_rate": 0.08249495161506622,
+      "l2_leaf_reg": 1.5696137327258445e-05,
+      "bagging_temperature": 0.007161454730229686
+    },
+    {
+      "iterations": 420,
+      "depth": 9,
+      "learning_rate": 0.12721383438892608,
+      "l2_leaf_reg": 0.5103872045104991,
+      "bagging_temperature": 0.19832796890856155
+    }
+  ],
+  "TabNet": [
+    {
+      "n_d": 32,
+      "n_a": 16,
+      "n_steps": 2,
+      "n_independent": 1,
+      "n_shared": 2,
+      "gamma": 1.1908320852624743,
+      "lr": 0.0010133966239025474
+    },
+    {
+      "n_d": 8,
+      "n_a": 32,
+      "n_steps": 2,
+      "n_independent": 1,
+      "n_shared": 2,
+      "gamma": 1.6053499334735568,
+      "lr": 0.0075190638008814
+    },
+    {
+      "n_d": 16,
+      "n_a": 32,
+      "n_steps": 2,
+      "n_independent": 1,
+      "n_shared": 2,
+      "gamma": 1.0605000077809728,
+      "lr": 0.007864495920974497
+    }
+  ],
+  "FT-Transformer": [
+    {
+      "d_token": 192,
+      "n_heads": 8,
+      "n_blocks": 2,
+      "attn_drop": 0.03160333844199781,
+      "ffn_hidden": 512,
+      "ffn_drop": 0.12791110870598357,
+      "lr": 0.00012915361243411938,
+      "batch_size": 256
+    },
+    {
+      "d_token": 192,
+      "n_heads": 4,
+      "n_blocks": 4,
+      "attn_drop": 0.2035177087095579,
+      "ffn_hidden": 128,
+      "ffn_drop": 0.02647244727782133,
+      "lr": 0.0005152233998078314,
+      "batch_size": 1024
+    },
+    {
+      "d_token": 192,
+      "n_heads": 4,
+      "n_blocks": 4,
+      "attn_drop": 0.19343416827998927,
+      "ffn_hidden": 512,
+      "ffn_drop": 0.2261066041441104,
+      "lr": 0.0004079040151704052,
+      "batch_size": 512
+    }
+  ],
+  "ResNet": [
+    {
+      "hidden": 128,
+      "n_layers": 5,
+      "dropout": 0.10045442102064142,
+      "lr": 0.007109286622442768,
+      "batch_size": 512
+    },
+    {
+      "hidden": 256,
+      "n_layers": 3,
+      "dropout": 0.10490245607961464,
+      "lr": 0.005684092224752066,
+      "batch_size": 512
+    },
+    {
+      "hidden": 256,
+      "n_layers": 4,
+      "dropout": 0.04920786267360731,
+      "lr": 0.009407392355312565,
+      "batch_size": 512
+    }
+  ]
+}

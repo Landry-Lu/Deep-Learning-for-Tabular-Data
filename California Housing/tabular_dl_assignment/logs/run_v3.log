@@ -1,0 +1,401 @@
+PyTorch: 2.8.0+cu128, CUDA: True
+GPU: NVIDIA GeForce RTX 4090
+Device: cuda, CPU cores: 16
+
+Loading California Housing dataset...
+Shape: (20640, 8), Target: (20640,)
+Features: ['MedInc', 'HouseAge', 'AveRooms', 'AveBedrms', 'Population', 'AveOccup', 'Latitude', 'Longitude']
+[RESUME] Found checkpoint: 6 tasks done
+  - [42, 'Ridge']
+  - [42, 'RandomForest']
+  - [42, 'XGBoost']
+  - [42, 'LightGBM']
+  - [42, 'CatBoost']
+  - [42, 'TabNet']
+
+============================================================
+SEED 42
+============================================================
+  [Ridge] SKIPPED (already done)
+  [RandomForest] SKIPPED (already done)
+  [XGBoost] SKIPPED (already done)
+  [LightGBM] SKIPPED (already done)
+  [CatBoost] SKIPPED (already done)
+  [TabNet] SKIPPED (already done)
+  [FT-Transformer] training... RMSE=0.4914 MAE=0.3153 R2=0.8239 t=3056.1s inf=0.0012ms
+  [MODEL SAVED] FT-Transformer seed=42
+  [CHECKPOINT] Saved 7 tasks
+
+============================================================
+SEED 123
+============================================================
+  [Ridge] training... RMSE=0.7168 MAE=0.5311 R2=0.6148 t=0.1s inf=0.0000ms
+  [MODEL SAVED] Ridge seed=123
+  [CHECKPOINT] Saved 8 tasks
+  [RandomForest] training... RMSE=0.4742 MAE=0.3188 R2=0.8314 t=26.5s inf=0.0162ms
+  [MODEL SAVED] RandomForest seed=123
+  [CHECKPOINT] Saved 9 tasks
+  [XGBoost] training... RMSE=0.4256 MAE=0.2828 R2=0.8642 t=56.6s inf=0.0007ms
+  [MODEL SAVED] XGBoost seed=123
+  [CHECKPOINT] Saved 10 tasks
+  [LightGBM] training... RMSE=0.4232 MAE=0.2822 R2=0.8657 t=31.8s inf=0.0068ms
+  [MODEL SAVED] LightGBM seed=123
+  [CHECKPOINT] Saved 11 tasks
+  [CatBoost] training... RMSE=0.4332 MAE=0.2895 R2=0.8593 t=151.5s inf=0.0008ms
+  [MODEL SAVED] CatBoost seed=123
+  [CHECKPOINT] Saved 12 tasks
+  [TabNet] training...
+Early stopping occurred at epoch 45 with best_epoch = 30 and best_val_rmse = 0.79355
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 36 with best_epoch = 21 and best_val_rmse = 0.64644
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 60 with best_epoch = 45 and best_val_rmse = 0.72858
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 109 with best_epoch = 94 and best_val_rmse = 0.66305
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 30 with best_epoch = 15 and best_val_rmse = 0.82928
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 116 with best_epoch = 101 and best_val_rmse = 0.79115
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 34 with best_epoch = 19 and best_val_rmse = 0.72666
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 57 with best_epoch = 42 and best_val_rmse = 0.80277
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 63 with best_epoch = 48 and best_val_rmse = 0.80628
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 73 with best_epoch = 58 and best_val_rmse = 0.72376
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 77 with best_epoch = 62 and best_val_rmse = 0.64244
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 32 with best_epoch = 17 and best_val_rmse = 0.6528
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 31 with best_epoch = 16 and best_val_rmse = 0.65501
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 97 with best_epoch = 82 and best_val_rmse = 0.64139
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 66 with best_epoch = 51 and best_val_rmse = 0.65611
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 77 with best_epoch = 62 and best_val_rmse = 0.65139
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 70 with best_epoch = 55 and best_val_rmse = 0.66117
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 111 with best_epoch = 96 and best_val_rmse = 0.68222
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 47 with best_epoch = 32 and best_val_rmse = 0.64111
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 59 with best_epoch = 44 and best_val_rmse = 0.64767
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 47 with best_epoch = 32 and best_val_rmse = 0.66552
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 47 with best_epoch = 32 and best_val_rmse = 0.6364
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 43 with best_epoch = 28 and best_val_rmse = 0.63755
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 55 with best_epoch = 40 and best_val_rmse = 0.64419
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 36 with best_epoch = 21 and best_val_rmse = 0.64441
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 36 with best_epoch = 21 and best_val_rmse = 0.64737
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 32 with best_epoch = 17 and best_val_rmse = 0.66632
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 29 with best_epoch = 14 and best_val_rmse = 0.67549
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 56 with best_epoch = 41 and best_val_rmse = 0.64489
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 78 with best_epoch = 63 and best_val_rmse = 0.65652
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 53 with best_epoch = 38 and best_val_rmse = 0.65012
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 47 with best_epoch = 32 and best_val_rmse = 0.64668
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 47 with best_epoch = 32 and best_val_rmse = 0.64031
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 47 with best_epoch = 32 and best_val_rmse = 0.64072
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 50 with best_epoch = 35 and best_val_rmse = 0.65202
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 58 with best_epoch = 43 and best_val_rmse = 0.63231
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 68 with best_epoch = 53 and best_val_rmse = 0.62171
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 43 with best_epoch = 28 and best_val_rmse = 0.6544
+Best weights from best epoch are automatically used!
+Stop training because you reached max_epochs = 150 with best_epoch = 136 and best_val_rmse = 0.68128
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 37 with best_epoch = 22 and best_val_rmse = 0.65611
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 37 with best_epoch = 22 and best_val_rmse = 0.64915
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 69 with best_epoch = 54 and best_val_rmse = 0.64254
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 58 with best_epoch = 43 and best_val_rmse = 0.65324
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 33 with best_epoch = 18 and best_val_rmse = 0.66115
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 54 with best_epoch = 39 and best_val_rmse = 0.64216
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 37 with best_epoch = 22 and best_val_rmse = 0.64707
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 49 with best_epoch = 34 and best_val_rmse = 0.64589
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 23 with best_epoch = 8 and best_val_rmse = 0.6444
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 98 with best_epoch = 83 and best_val_rmse = 0.73598
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 70 with best_epoch = 55 and best_val_rmse = 0.68772
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 68 with best_epoch = 53 and best_val_rmse = 0.62171
+Best weights from best epoch are automatically used!
+ RMSE=0.6091 MAE=0.4216 R2=0.7218 t=1880.2s inf=0.0141ms
+Successfully saved model at /root/tabular_dl_assignment/models/TabNet_seed123.zip
+  [MODEL SAVED] TabNet seed=123
+  [CHECKPOINT] Saved 13 tasks
+  [FT-Transformer] training... RMSE=0.4617 MAE=0.2964 R2=0.8402 t=2160.5s inf=0.0020ms
+  [MODEL SAVED] FT-Transformer seed=123
+  [CHECKPOINT] Saved 14 tasks
+
+============================================================
+SEED 456
+============================================================
+  [Ridge] training... RMSE=0.7287 MAE=0.5361 R2=0.6175 t=0.1s inf=0.0000ms
+  [MODEL SAVED] Ridge seed=456
+  [CHECKPOINT] Saved 15 tasks
+  [RandomForest] training... RMSE=0.5013 MAE=0.3376 R2=0.8190 t=31.6s inf=0.0230ms
+  [MODEL SAVED] RandomForest seed=456
+  [CHECKPOINT] Saved 16 tasks
+  [XGBoost] training... RMSE=0.4513 MAE=0.3001 R2=0.8533 t=34.4s inf=0.0005ms
+  [MODEL SAVED] XGBoost seed=456
+  [CHECKPOINT] Saved 17 tasks
+  [LightGBM] training... RMSE=0.4480 MAE=0.3005 R2=0.8554 t=19.5s inf=0.0027ms
+  [MODEL SAVED] LightGBM seed=456
+  [CHECKPOINT] Saved 18 tasks
+  [CatBoost] training... RMSE=0.4511 MAE=0.3001 R2=0.8534 t=310.7s inf=0.0007ms
+  [MODEL SAVED] CatBoost seed=456
+  [CHECKPOINT] Saved 19 tasks
+  [TabNet] training...
+Early stopping occurred at epoch 44 with best_epoch = 29 and best_val_rmse = 0.73034
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 72 with best_epoch = 57 and best_val_rmse = 0.83402
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 40 with best_epoch = 25 and best_val_rmse = 0.64772
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 58 with best_epoch = 43 and best_val_rmse = 0.64163
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 58 with best_epoch = 43 and best_val_rmse = 0.63285
+Best weights from best epoch are automatically used!
+Stop training because you reached max_epochs = 150 with best_epoch = 149 and best_val_rmse = 0.72407
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 138 with best_epoch = 123 and best_val_rmse = 0.65708
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 47 with best_epoch = 32 and best_val_rmse = 0.68335
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 54 with best_epoch = 39 and best_val_rmse = 0.63619
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 41 with best_epoch = 26 and best_val_rmse = 0.64713
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 35 with best_epoch = 20 and best_val_rmse = 0.65145
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 74 with best_epoch = 59 and best_val_rmse = 0.64187
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 48 with best_epoch = 33 and best_val_rmse = 0.64663
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 42 with best_epoch = 27 and best_val_rmse = 0.65679
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 67 with best_epoch = 52 and best_val_rmse = 0.64869
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 91 with best_epoch = 76 and best_val_rmse = 0.6867
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 55 with best_epoch = 40 and best_val_rmse = 0.63395
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 36 with best_epoch = 21 and best_val_rmse = 0.64547
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 60 with best_epoch = 45 and best_val_rmse = 0.65052
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 53 with best_epoch = 38 and best_val_rmse = 0.63553
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 89 with best_epoch = 74 and best_val_rmse = 0.64366
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 32 with best_epoch = 17 and best_val_rmse = 0.64912
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 47 with best_epoch = 32 and best_val_rmse = 0.65419
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 47 with best_epoch = 32 and best_val_rmse = 0.63876
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 83 with best_epoch = 68 and best_val_rmse = 0.64747
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 107 with best_epoch = 92 and best_val_rmse = 0.64604
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 41 with best_epoch = 26 and best_val_rmse = 0.64392
+Best weights from best epoch are automatically used!
+Stop training because you reached max_epochs = 150 with best_epoch = 142 and best_val_rmse = 0.66939
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 61 with best_epoch = 46 and best_val_rmse = 0.66947
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 56 with best_epoch = 41 and best_val_rmse = 0.6509
+Best weights from best epoch are automatically used!
+Stop training because you reached max_epochs = 150 with best_epoch = 149 and best_val_rmse = 0.73892
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 66 with best_epoch = 51 and best_val_rmse = 0.64304
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 50 with best_epoch = 35 and best_val_rmse = 0.63821
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 39 with best_epoch = 24 and best_val_rmse = 0.65721
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 37 with best_epoch = 22 and best_val_rmse = 0.64052
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 74 with best_epoch = 59 and best_val_rmse = 0.6525
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 57 with best_epoch = 42 and best_val_rmse = 0.63457
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 33 with best_epoch = 18 and best_val_rmse = 0.64689
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 54 with best_epoch = 39 and best_val_rmse = 0.6398
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 75 with best_epoch = 60 and best_val_rmse = 0.64748
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 40 with best_epoch = 25 and best_val_rmse = 0.64363
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 38 with best_epoch = 23 and best_val_rmse = 0.64473
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 55 with best_epoch = 40 and best_val_rmse = 0.6392
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 55 with best_epoch = 40 and best_val_rmse = 0.62574
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 64 with best_epoch = 49 and best_val_rmse = 0.65484
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 41 with best_epoch = 26 and best_val_rmse = 0.62595
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 41 with best_epoch = 26 and best_val_rmse = 0.638
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 41 with best_epoch = 26 and best_val_rmse = 0.64094
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 48 with best_epoch = 33 and best_val_rmse = 0.63742
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 41 with best_epoch = 26 and best_val_rmse = 0.63957
+Best weights from best epoch are automatically used!
+
+Early stopping occurred at epoch 55 with best_epoch = 40 and best_val_rmse = 0.62574
+Best weights from best epoch are automatically used!
+ RMSE=0.6349 MAE=0.4384 R2=0.7096 t=1897.1s inf=0.0152ms
+Successfully saved model at /root/tabular_dl_assignment/models/TabNet_seed456.zip
+  [MODEL SAVED] TabNet seed=456
+  [CHECKPOINT] Saved 20 tasks
+  [FT-Transformer] training...Traceback (most recent call last):
+  File "/root/miniconda3/lib/python3.12/multiprocessing/queues.py", line 264, in _feed
+  File "/root/miniconda3/lib/python3.12/multiprocessing/reduction.py", line 51, in dumps
+  File "/root/miniconda3/lib/python3.12/site-packages/torch/multiprocessing/reductions.py", line 619, in reduce_storage
+  File "/root/miniconda3/lib/python3.12/multiprocessing/reduction.py", line 198, in DupFd
+  File "/root/miniconda3/lib/python3.12/multiprocessing/resource_sharer.py", line 48, in __init__
+OSError: [Errno 24] Too many open files
+Traceback (most recent call last):
+  File "/root/miniconda3/lib/python3.12/multiprocessing/queues.py", line 264, in _feed
+    obj = _ForkingPickler.dumps(obj)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/multiprocessing/reduction.py", line 51, in dumps
+    cls(buf, protocol).dump(obj)
+  File "/root/miniconda3/lib/python3.12/site-packages/torch/multiprocessing/reductions.py", line 619, in reduce_storage
+    df = multiprocessing.reduction.DupFd(fd)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/multiprocessing/reduction.py", line 198, in DupFd
+    return resource_sharer.DupFd(fd)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/multiprocessing/resource_sharer.py", line 48, in __init__
+    new_fd = os.dup(fd)
+             ^^^^^^^^^^
+OSError: [Errno 24] Too many open files

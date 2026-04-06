@@ -1,0 +1,95 @@
+PyTorch: 2.8.0+cu128, CUDA: True
+GPU: NVIDIA GeForce RTX 5090
+Device: cuda, CPU cores: 16
+
+Loading California Housing dataset...
+Shape: (20640, 8), Target: (20640,)
+Features: ['MedInc', 'HouseAge', 'AveRooms', 'AveBedrms', 'Population', 'AveOccup', 'Latitude', 'Longitude']
+[RESUME] Found checkpoint: 24 tasks done
+  - [42, 'Ridge']
+  - [42, 'RandomForest']
+  - [42, 'XGBoost']
+  - [42, 'LightGBM']
+  - [42, 'CatBoost']
+  - [42, 'TabNet']
+  - [42, 'FT-Transformer']
+  - [123, 'Ridge']
+  - [123, 'RandomForest']
+  - [123, 'XGBoost']
+  - [123, 'LightGBM']
+  - [123, 'CatBoost']
+  - [123, 'TabNet']
+  - [123, 'FT-Transformer']
+  - [456, 'Ridge']
+  - [456, 'RandomForest']
+  - [456, 'XGBoost']
+  - [456, 'LightGBM']
+  - [456, 'CatBoost']
+  - [456, 'TabNet']
+  - [42, 'ResNet']
+  - [123, 'ResNet']
+  - [456, 'FT-Transformer']
+  - [456, 'ResNet']
+
+============================================================
+SEED 42
+============================================================
+  [Ridge] SKIPPED (already done)
+  [RandomForest] SKIPPED (already done)
+  [XGBoost] SKIPPED (already done)
+  [LightGBM] SKIPPED (already done)
+  [CatBoost] SKIPPED (already done)
+  [TabNet] SKIPPED (already done)
+  [FT-Transformer] SKIPPED (already done)
+  [ResNet] SKIPPED (already done)
+
+============================================================
+SEED 123
+============================================================
+  [Ridge] SKIPPED (already done)
+  [RandomForest] SKIPPED (already done)
+  [XGBoost] SKIPPED (already done)
+  [LightGBM] SKIPPED (already done)
+  [CatBoost] SKIPPED (already done)
+  [TabNet] SKIPPED (already done)
+  [FT-Transformer] SKIPPED (already done)
+  [ResNet] SKIPPED (already done)
+
+============================================================
+SEED 456
+============================================================
+  [Ridge] SKIPPED (already done)
+  [RandomForest] SKIPPED (already done)
+  [XGBoost] SKIPPED (already done)
+  [LightGBM] SKIPPED (already done)
+  [CatBoost] SKIPPED (already done)
+  [TabNet] SKIPPED (already done)
+  [FT-Transformer] SKIPPED (already done)
+  [ResNet] SKIPPED (already done)
+
+Results saved!
+
+====================================================================================================
+FINAL RESULTS SUMMARY
+====================================================================================================
+Ridge                RMSE=0.7297±0.0110  MAE=0.5336±0.0021  R2=0.6096±0.0093  Train=0.1s  Inf=0.0000ms
+RandomForest         RMSE=0.4954±0.0155  MAE=0.3307±0.0084  R2=0.8201±0.0089  Train=28.0s  Inf=0.0217ms
+XGBoost              RMSE=0.4420±0.0116  MAE=0.2919±0.0071  R2=0.8568±0.0053  Train=46.2s  Inf=0.0006ms
+LightGBM             RMSE=0.4372±0.0104  MAE=0.2901±0.0077  R2=0.8599±0.0043  Train=34.4s  Inf=0.0067ms
+CatBoost             RMSE=0.4452±0.0085  MAE=0.2945±0.0043  R2=0.8547±0.0034  Train=199.0s  Inf=0.0007ms
+TabNet               RMSE=0.6292±0.0146  MAE=0.4337±0.0087  R2=0.7098±0.0098  Train=2132.5s  Inf=0.0140ms
+FT-Transformer       RMSE=0.4813±0.0139  MAE=0.3085±0.0086  R2=0.8302±0.0072  Train=2824.0s  Inf=0.0015ms
+ResNet               RMSE=0.4937±0.0106  MAE=0.3231±0.0063  R2=0.8213±0.0053  Train=668.7s  Inf=0.0002ms
+Saved: performance_comparison.png
+Saved: tradeoff.png
+Saved: sensitivity.png
+Saved: feature_importance.png
+Saved: pred_vs_actual.png
+Saved: residuals.png
+
+============================================================
+ALL EXPERIMENTS COMPLETE!
+Results: /root/tabular_dl_assignment/results/
+Figures: /root/tabular_dl_assignment/figures/
+Models:  /root/tabular_dl_assignment/models/
+============================================================
