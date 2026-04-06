@@ -1,0 +1,41 @@
+{
+  "model_name": "FTTransformer",
+  "seed": 789,
+  "format": "ft_transformer",
+  "metrics": {
+    "accuracy": 0.9635509857782482,
+    "auc_roc": 0.594019626930128,
+    "f1": 0.0,
+    "seed": 789,
+    "train_seconds": 485.6975110160056,
+    "infer_ms_per_sample": 0.0615305455423555,
+    "infer_ms_per_sample_std": 0.0006005416741727395,
+    "model_size_mb": 0.1351327896118164,
+    "best_valid_auc": 0.6148772269188704,
+    "best_params": {
+      "dim": 16,
+      "depth": 3,
+      "heads": 4,
+      "attn_dropout": 0.12996486059101658,
+      "ff_dropout": 0.0826472990852878,
+      "lr": 0.0005228726043341119,
+      "weight_decay": 0.0006486407934084053,
+      "batch_size": 32,
+      "epochs": 12,
+      "patience": 4
+    }
+  },
+  "best_params": {
+    "dim": 16,
+    "depth": 3,
+    "heads": 4,
+    "attn_dropout": 0.12996486059101658,
+    "ff_dropout": 0.0826472990852878,
+    "lr": 0.0005228726043341119,
+    "weight_decay": 0.0006486407934084053,
+    "batch_size": 32,
+    "epochs": 12,
+    "patience": 4
+  },
+  "state_path": "artifacts_copy/checkpoints/FTTransformer_seed789/ft_state.pt"
+}
