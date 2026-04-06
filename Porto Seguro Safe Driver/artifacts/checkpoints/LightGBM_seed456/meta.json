@@ -1,0 +1,38 @@
+{
+  "model_name": "LightGBM",
+  "seed": 456,
+  "format": "joblib",
+  "metrics": {
+    "accuracy": 0.9635425854523155,
+    "auc_roc": 0.6328843195255904,
+    "f1": 0.0,
+    "seed": 456,
+    "train_seconds": 12.213000578998617,
+    "infer_ms_per_sample": 0.01056282975731811,
+    "infer_ms_per_sample_std": 0.001276734351022956,
+    "model_size_mb": 1.735487937927246,
+    "best_valid_auc": 0.6317765311524925,
+    "best_params": {
+      "learning_rate": 0.046071274823772934,
+      "n_estimators": 300,
+      "num_leaves": 57,
+      "max_depth": 13,
+      "min_child_samples": 46,
+      "subsample": 0.6070725538538317,
+      "colsample_bytree": 0.676049902158778,
+      "reg_alpha": 1.7415642506281814,
+      "reg_lambda": 1.9829316362154138e-08
+    }
+  },
+  "best_params": {
+    "learning_rate": 0.046071274823772934,
+    "n_estimators": 300,
+    "num_leaves": 57,
+    "max_depth": 13,
+    "min_child_samples": 46,
+    "subsample": 0.6070725538538317,
+    "colsample_bytree": 0.676049902158778,
+    "reg_alpha": 1.7415642506281814,
+    "reg_lambda": 1.9829316362154138e-08
+  }
+}
