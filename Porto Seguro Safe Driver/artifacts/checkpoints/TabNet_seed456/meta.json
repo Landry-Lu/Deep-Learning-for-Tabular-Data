@@ -1,0 +1,37 @@
+{
+  "model_name": "TabNet",
+  "seed": 456,
+  "format": "tabnet",
+  "metrics": {
+    "accuracy": 0.9635509857782482,
+    "auc_roc": 0.622945608494436,
+    "f1": 0.0,
+    "seed": 456,
+    "train_seconds": 671.307282531001,
+    "infer_ms_per_sample": 0.013006328795471525,
+    "infer_ms_per_sample_std": 0.0011401260433597286,
+    "model_size_mb": 0.7268075942993164,
+    "best_valid_auc": 0.6251383140632227,
+    "best_params": {
+      "n_d": 32,
+      "n_a": 64,
+      "n_steps": 3,
+      "gamma": 1.6101304516898944,
+      "lambda_sparse": 5.519869466250662e-07,
+      "lr": 0.023472663855000447,
+      "batch_size": 4096,
+      "virtual_batch_size": 128
+    }
+  },
+  "best_params": {
+    "n_d": 32,
+    "n_a": 64,
+    "n_steps": 3,
+    "gamma": 1.6101304516898944,
+    "lambda_sparse": 5.519869466250662e-07,
+    "lr": 0.023472663855000447,
+    "batch_size": 4096,
+    "virtual_batch_size": 128
+  },
+  "model_zip": "artifacts_copy/checkpoints/TabNet_seed456/tabnet_model.zip"
+}
