@@ -1,0 +1,28 @@
+{
+  "model_name": "CatBoost",
+  "seed": 123,
+  "format": "joblib",
+  "metrics": {
+    "accuracy": 0.9635425854523155,
+    "auc_roc": 0.6355952201115845,
+    "f1": 0.00046061722708429296,
+    "seed": 123,
+    "train_seconds": 105.36705497299772,
+    "infer_ms_per_sample": 0.012642690832717112,
+    "infer_ms_per_sample_std": 0.0002939932880057743,
+    "model_size_mb": 4.127185821533203,
+    "best_valid_auc": 0.6347990467587409,
+    "best_params": {
+      "depth": 9,
+      "learning_rate": 0.10639734290938918,
+      "l2_leaf_reg": 18.84375791835453,
+      "iterations": 900
+    }
+  },
+  "best_params": {
+    "depth": 9,
+    "learning_rate": 0.10639734290938918,
+    "l2_leaf_reg": 18.84375791835453,
+    "iterations": 900
+  }
+}
