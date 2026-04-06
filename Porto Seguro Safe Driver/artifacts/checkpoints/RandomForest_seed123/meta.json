@@ -1,0 +1,30 @@
+{
+  "model_name": "RandomForest",
+  "seed": 123,
+  "format": "joblib",
+  "metrics": {
+    "accuracy": 0.6200028561108171,
+    "auc_roc": 0.617827933905717,
+    "f1": 0.09546090781843632,
+    "seed": 123,
+    "train_seconds": 117.37005257500277,
+    "infer_ms_per_sample": 0.09333714454776425,
+    "infer_ms_per_sample_std": 0.00044180664926237335,
+    "model_size_mb": 5.7997236251831055,
+    "best_valid_auc": 0.6193979599657188,
+    "best_params": {
+      "n_estimators": 600,
+      "max_depth": 6,
+      "min_samples_split": 4,
+      "min_samples_leaf": 7,
+      "max_features": "log2"
+    }
+  },
+  "best_params": {
+    "n_estimators": 600,
+    "max_depth": 6,
+    "min_samples_split": 4,
+    "min_samples_leaf": 7,
+    "max_features": "log2"
+  }
+}
